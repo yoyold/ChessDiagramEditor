@@ -1,41 +1,69 @@
-# Prerequisites
-*.d
+# ===== Build-Verzeichnisse =====
+build/
+build-*/
+cmake-build-*/
+out/
+Release/
+Debug/
+MinSizeRel/
+RelWithDebInfo/
+x64/
+x86/
 
-# Compiled Object files
-*.slo
-*.lo
+# ===== CMake generiert =====
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+CMakeUserPresets.json
+compile_commands.json
+CTestTestfile.cmake
+_deps/
+*.cmake
+!CMakeLists.txt
+
+# ===== Qt Creator =====
+*.user
+*.user.*
+*.autosave
+*.qmlc
+*.jsc
+
+# ===== Kompilierte Dateien =====
 *.o
 *.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Linker files
-*.ilk
-
-# Debugger Files
-*.pdb
-
-# Compiled Dynamic libraries
+*.exe
+*.dll
 *.so
 *.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
 *.a
 *.lib
-
-# Executables
-*.exe
-*.out
+*.pdb
+*.ilk
+*.exp
 *.app
+moc_*.cpp
+moc_*.h
+qrc_*.cpp
+ui_*.h
+*.moc
 
-# debug information files
-*.dwo
+# ===== Visual Studio =====
+.vs/
+*.vcxproj*
+*.sln
+*.suo
+*.opensdf
+*.sdf
+*.cachefile
+*.VC.db
+*.VC.opendb
+ipch/
+
+# ===== Betriebssystem =====
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
