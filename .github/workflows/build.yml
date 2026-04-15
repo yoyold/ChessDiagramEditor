@@ -1,0 +1,71 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-windows:
+    name: Windows
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: '6.8.*'
+          host: windows
+          target: desktop
+          arch: win64_msvc2022_64
+          modules: qtsvg
+
+      - name: Configure CMake
+        run: cmake -B build -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build
+        run: cmake --build build --config Release
+
+      - name: Deploy Qt runtime
+        run: |
+          mkdir -p artifact
+          cp build/Release/SchachbrettEditor.exe artifact/
+          windeployqt --release --no-translations artifact/SchachbrettEditor.exe
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: SchachbrettEditor-windows
+          path: artifact/
+
+  build-linux:
+    name: Linux
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Qt and dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            qt6-base-dev \
+            qt6-svg-dev \
+            libgl1-mesa-dev \
+            cmake \
+            ninja-build
+
+      - name: Configure CMake
+        run: cmake -B build -DCMAKE_BUILD_TYPE=Release -G Ninja
+
+      - name: Build
+        run: cmake --build build
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: SchachbrettEditor-linux
+          path: build/SchachbrettEditor
