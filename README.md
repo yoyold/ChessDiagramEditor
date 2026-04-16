@@ -1,5 +1,7 @@
 # Chess Diagram Editor
 
+[![Build](https://github.com/yoyold/ChessDiagramEditor/actions/workflows/build.yml/badge.svg)](https://github.com/yoyold/ChessDiagramEditor/actions/workflows/build.yml)
+
 A Qt6-based chess diagram editor with a visual board editor, FEN/PGN import, and image export.
 
 Uses the well-known **Cburnett piece set** from Wikimedia Commons (CC BY-SA 3.0 / BSD).
