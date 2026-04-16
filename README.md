@@ -1,6 +1,11 @@
 # Chess Diagram Editor
 
 [![Build](https://github.com/yoyold/ChessDiagramEditor/actions/workflows/build.yml/badge.svg)](https://github.com/yoyold/ChessDiagramEditor/actions/workflows/build.yml)
+[![License](https://img.shields.io/github/license/yoyold/ChessDiagramEditor)](LICENSE)
+[![Last Commit](https://img.shields.io/github/last-commit/yoyold/ChessDiagramEditor)](https://github.com/yoyold/ChessDiagramEditor/commits/main)
+![C++](https://img.shields.io/badge/C%2B%2B-17-blue?logo=cplusplus)
+![Qt](https://img.shields.io/badge/Qt-6-41CD52?logo=qt&logoColor=white)
+![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux-lightgrey)
 
 A Qt6-based chess diagram editor with a visual board editor, FEN/PGN import, and image export.
 
